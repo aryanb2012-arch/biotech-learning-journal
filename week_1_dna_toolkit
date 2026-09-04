@@ -1,0 +1,27 @@
+#Gets DNA sequence from the user
+dna = input("Please enter a DNA sequence here: ")
+dna1 = dna.upper()
+total_length = len(dna1)
+
+#Finding count of Guanine and Cytosine
+g_content = dna1.count("G")
+c_content = dna1.count("C")
+
+#GC Content Percentage
+gc_content = ((g_content + c_content)/total_length) * 100
+
+#Complement Generation
+complement_gen = dna1.replace("A","t").replace("T","a").replace("C","g").replace("G","c")
+
+#RNA Transcription
+rna_transc = dna1.replace("T","U")
+
+#Reverse Complement 
+rev_complement = complement_gen.upper()[::-1]
+
+#Printing Out Results
+
+print(f"GC Content Percentage: {int(gc_content)}")
+print(f"Complement: {complement_gen.upper()}")
+print(f"RNA Transcription: {rna_transc}")
+print(f"Reverse Complement: {rev_complement}")
